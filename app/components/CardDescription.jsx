@@ -91,7 +91,7 @@ const CardDescription = ({ className }) => {
               </motion.p>
             </div>
 
-            <div className="lg:w-6/12 mt">
+            <div className="lg:w-6/12 ">
               {/* Card Description - Image - Right */}
               <motion.div style={{ y: img1 }} className="z-[2] relative">
                 <Image
