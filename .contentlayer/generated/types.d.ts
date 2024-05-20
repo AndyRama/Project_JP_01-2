@@ -8,6 +8,20 @@ export { isType } from 'contentlayer/client'
 export type { Markdown, MDX, ImageFieldData, IsoDateTimeString }
 
 /** Document types */
+export type Info = {
+  /** File path relative to `contentDirPath` */
+  _id: string
+  _raw: Local.RawDocumentData
+  type: 'Info'
+  /** the title of the info  */
+  title: string
+  /** the description of the info  */
+  excerpt: string
+  /** MDX file body */
+  body: MDX
+  url: string
+}
+
 export type Post = {
   /** File path relative to `contentDirPath` */
   _id: string
@@ -25,54 +39,6 @@ export type Post = {
   author: string
   /** the  categories image of the post  */
   categories: Category[]
-  /** MDX file body */
-  body: MDX
-  url: string
-}
-
-export type Privacy = {
-  /** File path relative to `contentDirPath` */
-  _id: string
-  _raw: Local.RawDocumentData
-  type: 'Privacy'
-  /** the title of the post  */
-  title: string
-  /** the description of the post  */
-  excerpt: string
-  /** the date of the post  */
-  date: IsoDateTimeString
-  /** the  featured image of the post  */
-  image: string
-  /** the  author image of the post  */
-  author: string
-  /** the  categories image of the post  */
-  categories: Category[]
-  /** MDX file body */
-  body: MDX
-  url: string
-}
-
-export type Project = {
-  /** File path relative to `contentDirPath` */
-  _id: string
-  _raw: Local.RawDocumentData
-  type: 'Project'
-  /** The title of the project */
-  title?: string | undefined
-  /** The location of the project */
-  location?: string | undefined
-  /** The date of the project */
-  date?: IsoDateTimeString | undefined
-  /** The image of the project */
-  image?: string | undefined
-  /** The client of the project */
-  client?: string | undefined
-  /** The role of the project */
-  role?: string | undefined
-  /** The year of the project */
-  year?: string | undefined
-  /** the  description content of the project  */
-  description: string
   /** MDX file body */
   body: MDX
   url: string
@@ -94,8 +60,8 @@ export type Category = {
 export type AllTypes = DocumentTypes | NestedTypes
 export type AllTypeNames = DocumentTypeNames | NestedTypeNames
 
-export type DocumentTypes = Post | Privacy | Project
-export type DocumentTypeNames = 'Post' | 'Privacy' | 'Project'
+export type DocumentTypes = Info | Post
+export type DocumentTypeNames = 'Info' | 'Post'
 
 export type NestedTypes = Category
 export type NestedTypeNames = 'Category'
@@ -103,8 +69,7 @@ export type NestedTypeNames = 'Category'
 export type DataExports = {
   allDocuments: DocumentTypes[]
   allPosts: Post[]
-  allProjects: Project[]
-  allPrivacies: Privacy[]
+  allInfos: Info[]
 }
 
 
@@ -124,9 +89,8 @@ declare global {
 }
 
 export type DocumentTypeMap = {
+  Info: Info
   Post: Post
-  Privacy: Privacy
-  Project: Project
 }
 
 export type NestedTypeMap = {

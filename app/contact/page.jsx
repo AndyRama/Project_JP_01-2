@@ -1,5 +1,5 @@
 import React from 'react'
-import Hero from '../components/about/Hero'
+import Hero from '../components/about/SubHero'
 import ContactForm from '../components/ContactForm'
 
 const page = () => {

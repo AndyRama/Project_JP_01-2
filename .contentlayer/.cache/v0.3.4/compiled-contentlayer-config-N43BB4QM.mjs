@@ -1,10 +1,10 @@
+// contentlayer.config.js
 import {
   defineNestedType,
   defineDocumentType,
-  makeSource,
-} from 'contentlayer/source-files';
-
-const Post = defineDocumentType(() => ({
+  makeSource
+} from "contentlayer/source-files";
+var Post = defineDocumentType(() => ({
   name: "Post",
   filePathPattern: `blog/*.mdx`,
   contentType: "mdx",
@@ -12,80 +12,80 @@ const Post = defineDocumentType(() => ({
     title: {
       type: "string",
       description: "the title of the post ",
-      required: true,
+      required: true
     },
     excerpt: {
-      type:"string",
+      type: "string",
       description: "the description of the post ",
-      required: true,
+      required: true
     },
     date: {
       type: "date",
       description: "the date of the post ",
-      required: true,
+      required: true
     },
     image: {
       type: "string",
       description: "the  featured image of the post ",
-      required: true,
+      required: true
     },
     author: {
       type: "string",
       description: "the  author image of the post ",
-      required: true,
+      required: true
     },
     categories: {
       type: "list",
       of: Category,
       description: "the  categories image of the post ",
-      required: true,
-    },
+      required: true
+    }
   },
   computedFields: {
     url: {
       type: "string",
-      resolve: (doc) => `${doc._raw.flattenedPath}`,
+      resolve: (doc) => `${doc._raw.flattenedPath}`
     }
   }
-}))
-
-const Category = defineNestedType(() => ({
+}));
+var Category = defineNestedType(() => ({
   name: "Category",
   fields: {
     title: {
       type: "string",
       description: "The title of the category",
-      required: true,
+      required: true
     }
   }
-}))
-
-
-const Info = defineDocumentType(() => ({
+}));
+var Info = defineDocumentType(() => ({
   name: "Info",
   filePathPattern: `privacies/*.mdx`,
   contentType: "mdx",
   fields: {
     title: {
-      type: 'string',
-      description: 'the title of the info ',
-      required: true,
+      type: "string",
+      description: "the title of the info ",
+      required: true
     },
     excerpt: {
-      type: 'string',
-      description: 'the description of the info ',
-      required: true,
-    },
+      type: "string",
+      description: "the description of the info ",
+      required: true
+    }
   },
   computedFields: {
     url: {
       type: "string",
-      resolve: (doc) => `${doc._raw.flattenedPath}`,
+      resolve: (doc) => `${doc._raw.flattenedPath}`
     }
   }
-}))
-
-export default makeSource({
+}));
+var contentlayer_config_default = makeSource({
   contentDirPath: "content",
-  documentTypes: [Post, Info],
-})
+  documentTypes: [Post, Info]
+});
+export {
+  contentlayer_config_default as default
+};
+//# sourceMappingURL=compiled-contentlayer-config-N43BB4QM.mjs.map

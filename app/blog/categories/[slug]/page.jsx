@@ -1,6 +1,6 @@
 import React from 'react'
 import { allPosts } from 'contentlayer/generated'
-import Hero from '@/app/components/about/Hero'
+import Hero from '@/app/components/about/SubHero'
 import Posts from '@/app/components/blog/category/Posts'
 import Subscribe from '@/app/components/Subscribe'
 
