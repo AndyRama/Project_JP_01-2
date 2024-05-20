@@ -26,7 +26,7 @@ const page = ({ params }) => {
   }
   return (
     <>
-      <SubHero className="pt-32 pb-24 capitalize" title={`${newTitle} [${itemsTotal}]`} subTitle="Category"/>
+      <SubHero className="pt-32 pb-24 capitalize" title={`${newTitle} [${itemsTotal}]`} subTitle="Categories"/>
       <Posts className="pt-0 pb-52" archive={true} params={params} itemsPerPage={6}/>
       <Subscribe className="py-16 pt-64 lg:py-32"/>
     </>
