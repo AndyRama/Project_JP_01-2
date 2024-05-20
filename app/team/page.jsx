@@ -3,13 +3,13 @@ import SubHero from '../components/about/SubHero'
 import Subscribe from '../components/Subscribe'
 
 
-const aboutPage = () => {
+const Page = () => {
   return (
     <>
-      <SubHero className="pt-52 pb-24" />
-      <Subscribe className="py-5 lg:py-32 bg-orange-300"/>
+      <SubHero className="pt-32" title="Le coeur de la team" />
+      <Subscribe className="py-16 pt-32 lg:py-32" />
     </>
   )
 }
 
-export default aboutPage
+export default Page
