@@ -26,7 +26,7 @@ const PostCard = ({ index, post }) => {
         },
       }}
       viewport={{ once: true }}
-      className="bg-white relative overflow-hidden group rounded ">
+      className="bg-[#2F2E2E] relative overflow-hidden group rounded ">
       <Link href={post.url} className="relative block overflow-hidden">
         <Image
           src={post.image}
@@ -38,12 +38,12 @@ const PostCard = ({ index, post }) => {
         />
       </Link>
 
-      <div className="p-6">
-        <p className="text-gray-500 mb-2 uppercase text-[12px] tracking-[1px]">
+      <div className="p-6 ">
+        <p className="text-white mb-2 uppercase text-[12px] tracking-[1px]">
           { format(parseISO(post.date), "LLL d, yyyy" )} • {post.author}
         </p>
 
-        <h3 className="mb-4">
+        <h3 className="mb-4 text-white">
           <Link href={post.url} className="text-lg leading-none">
             {post.title}
           </Link>
@@ -51,7 +51,7 @@ const PostCard = ({ index, post }) => {
         <p>
           <Link
             href={post.url}
-            className="text-[12px] tracking-[2px] uppercase
+            className="text-gray-500 hover:text-white text-[12px] tracking-[2px] uppercase
             inline-block  duration-300 transistion-all bg-white-600
             ease-in-out relative before:content-['']
             before:absolute before:bottom-0 before:left-0 before:w-full
@@ -60,8 +60,9 @@ const PostCard = ({ index, post }) => {
             before:scale-x-0 before:scale-y-[1] before:scale-z[1]
             before:wil-change-transform hover:before:origin-[100%, 0%]
             hover:before:scale-x-[1] hover:before:scale-y-[1]
-            hover:before:scale-z-[1]">
-              Read More
+            hover:before:scale-z-[1] pb-2"
+          >
+            lire l&apos;article
           </Link>
         </p>
       </div>
@@ -73,9 +74,8 @@ const RecentBlog = ({ className }) => {
   const posts = allPosts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
   return (
     <section className={`${className}`}>
-      <div className="container px-4 mx-auto">
-        <div className="lg:flex justify-center mb-2">
-          <div className="w-full lg:w-8/12 lg:flex gap-0 items-center">
+      <div className="container px-4 mx-auto rounded-md">
+        <div className=" px-4 md:px-20 lg:flex justify-center mb-2">
             <div className="lg:w-7/12">
                {recentBlogContent.heading.subTitle && (
               <motion.span
@@ -138,8 +138,6 @@ const RecentBlog = ({ className }) => {
               <PostCard key={index} index={ index} post={post}/>
             ))}
         </div>
-
-      </div>
     </section>
   );
 };

@@ -20,7 +20,7 @@ const PostCard = ({ post, index}) => {
         }
       }}
       viewport={ { once: true}}
-      className="relative overflow-hidden">
+      className="relative overflow-hidden rounded-t-md">
 
       {/* Image top card */}
       <Link href={`/${post.url}`} className="relative block overflow-hidden group">
@@ -34,7 +34,7 @@ const PostCard = ({ post, index}) => {
         />
       </Link>
 
-      <div className="p-8">
+      <div className="p-8 bg-[#2F2E2E] rounded-b-md">
         <p className='text-gray-500 mb-3 uppercase text-[12px] tracking-[1px]'>
           { format(parseISO(post.date), "LLL d, yyyy")} • { post.author}
         </p>
@@ -44,9 +44,11 @@ const PostCard = ({ post, index}) => {
           </Link>
         </h3>
         <p>
-          <Link href={`/${urlWithoutBlog}`} className='uppercase text-[12px] tracking-[2px] border-b-2
-            pb-2 inline-block border-orange-600'>
-              Read More
+          <Link href={`/${urlWithoutBlog}`} 
+            className="text-white uppercase text-[12px] tracking-[2px] border-b-2
+            pb-2 inline-block border-orange-400"
+          >
+          lire l&apos;article
           </Link>
         </p>
       </div>
@@ -55,5 +57,3 @@ const PostCard = ({ post, index}) => {
 }
 
 export default PostCard
-
-// ok

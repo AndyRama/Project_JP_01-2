@@ -5,7 +5,7 @@ import ContactForm from '../components/ContactForm'
 const page = () => {
   return (
     <>
-      <Hero className="pt-32 pb-24" title="Contact" subTitle="Get in touch"/>
+      <Hero className="pt-32 pb-24" title="Contact" subTitle=""/>
       <ContactForm />
     </>
   )

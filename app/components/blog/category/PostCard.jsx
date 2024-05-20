@@ -1,4 +1,5 @@
 "use client"
+
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
@@ -22,7 +23,8 @@ const PostCard = ({ post, index}) => {
       viewport={ { once: true}}
       className="relative overflow-hidden">
       {/* Image top card */}
-      <Link href={`/${post.url}`} className="relative block overflow-hidden group">
+      <Link href={`/${post.url}`}
+        className="relative block overflow-hidden group">
         <Image
           src={post.image}
           alt={post.title}
@@ -33,12 +35,13 @@ const PostCard = ({ post, index}) => {
         />
       </Link>
 
-      <div className="p-8">
+      <div className="p-8 bg-[#2F2E2E] rounded-b-md">
         <p className='text-gray-500 mb-3 uppercase text-[12px] tracking-[1px]'>
           { format(parseISO(post.date), "LLL d, yyyy")} • { post.author}
         </p>
         <h3 className="mb-4">
-          <Link href={`/${post.url}`}className='text-lg leading-none'>
+          <Link href={`/${post.url}`}
+            className='text-white text-lg leading-none'>
             {post.title}
           </Link>
         </h3>
@@ -46,7 +49,7 @@ const PostCard = ({ post, index}) => {
 
         <p>
           <Link href={`/${post.url}`}
-           className={`text-[12px] tracking-[2px] uppercase
+           className={`text-gray-500 hover:text-white text-[12px] tracking-[2px] uppercase
             pb-2 inline-block  duration-300 transistion-all bg-white-600
             ease-in-out relative before:content-['']
             before:absolute before:bottom-0 before:left-0 before:w-full
@@ -55,8 +58,9 @@ const PostCard = ({ post, index}) => {
             before:scale-x-0 before:scale-y-[1] before:scale-z[1]
             before:wil-change-transform hover:before:origin-[100%, 0%]
             hover:before:scale-x-[1] hover:before:scale-y-[1]
-            hover:before:scale-z-[1]`}>
-              Read More
+            hover:before:scale-z-[1]`}
+          >
+            lire l&apos;article
           </Link>
         </p>
       </div>
@@ -65,5 +69,3 @@ const PostCard = ({ post, index}) => {
 }
 
 export default PostCard
-
-// ok
