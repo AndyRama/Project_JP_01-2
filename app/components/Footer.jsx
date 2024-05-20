@@ -1,167 +1,198 @@
-"use client";
-import React from "react";
-import { BiSolidHeart } from "react-icons/bi";
-import Link from "next/link";
+'use client'
+
+import React from 'react'
+import { BiSolidHeart } from 'react-icons/bi'
+import { FaInstagramSquare } from 'react-icons/fa'
+import { FaFacebook } from 'react-icons/fa'
+import { FaLinkedin } from 'react-icons/fa'
+import Link from 'next/link'
 
 const footerContent = {
   footerLinks: [
     {
-      heading: "Product",
+      heading: 'Site Map',
       links: [
         {
-          href: "#",
-          label: "Overviews",
+          href: '/',
+          label: 'Accueil',
         },
         {
-          href: "#",
-          label: "Solution",
-          badge: "New",
+          href: '/blog',
+          label: 'Blog',
         },
         {
-          href: "#",
-          label: "Tutorials",
+          href: '/contact',
+          label: 'Contact',
         },
         {
-          href: "#",
-          label: "Pricing",
+          href: '/prestations',
+          label: 'Prestations',
         },
         {
-          href: "#",
-          label: "Releases",
+          href: '/team',
+          label: 'Team',
+          badge: 'Coup de 🧡',
         },
       ],
     },
     {
-      heading: "Company",
+      heading: 'Pack',
       links: [
         {
-          href: "/about",
-          label: "About us",
+          href: '/prestations/#pack',
+          label: 'Débutant',
+          badge: 'New',
         },
         {
-          href: "#",
-          label: "Leadership",
+          href: '/prestations/#pack',
+          label: 'Intermédiaire',
         },
         {
-          href: "#",
-          label: "Careers",
-          badge: "We're hiring",
-        },
-        {
-          href: "#",
-          label: "Press",
-        },
-        {
-          href: "#",
-          label: "Contact",
-        },
-        {
-          href: "#",
-          label: "Branding",
+          href: '/prestations/#pack',
+          label: 'Confirmé',
         },
       ],
     },
     {
-      heading: "Ressources",
+      heading: 'Ressources',
       links: [
         {
-          href: "#",
-          label: "Blog",
+          href: '/blog',
+          label: 'Blog',
         },
         {
-          href: "#",
-          label: "Events",
+          href: '/',
+          label: 'School',
         },
         {
-          href: "#",
-          label: "Newsletter",
-        },
-        {
-          href: "#",
-          label: "Knowledge base",
-        },
-        {
-          href: "#",
-          label: "Support",
-        },
-        {
-          href: "#",
-          label: "Tutorials",
+          href: '/prestations/#E-Books',
+          label: 'E-Books',
+          badge: 'New',
         },
       ],
     },
   ],
-};
+}
 
 const Copyright = () => {
   return (
-    <div className="pt-7 mt-7 md:mt-14 md:pt-14 border-t border-t-gray-100 text-center text-gray-500">
+    <div className="pt-2 mb-5 md:mt-5 md:pt-3 border-t border-t-gray-100 text-center text-white ">
       <p className="text-center items-center mx-auto text-sm">
-        &copy; 2023 {" "}
-        <Link href="/" className="text-orange-600">Lemurian Agency. </Link>
-        All rights reserved. Created with { " "}
-        <BiSolidHeart className="text-red-500 mx-1 inline-block"/>
-        by {" "}
-        <Link href="/" className="text-orange-600">Andy Ramaroson</Link>
+        &copy; 2024{' '}
+        <Link href="/" className="text-orange-400">
+          Unlcoaching{' '}
+        </Link>
+        Tous droits réservés. Crée avec{' '}
+        <BiSolidHeart className="text-red-400 mx-1 inline-block" />
+        par{' '}
+        <Link href="/" className="text-orange-400">
+          Andy Ramaroson
+        </Link>
       </p>
     </div>
-    )
-  }
+  )
+}
 
-  const Footer = ({ className }) => {
-    return (
-      <footer className={`${className} overflow-hidden w-full h-full relative`}>
-        <div className="container mx-auto px-4 z-20 relative">
-          <div className="md:flex">
-            <div className="md:w-4/12 mb-10 md:mb-0">
-              <Link href="#" className="text-[22px] text-gray-800 font-bold">
-                Lemurian
-                <span className="text-orange-400">.</span>
-              </Link>
-            </div>
-
-            <div className="md:w-8/12">
-              <div className="grid grid-cols-3 md:grid-cols-3">
-                {footerContent.footerLinks.map((item, index) => (
-                  <div className="mb-5 md:mb-0" key={item.heading}>
-                    <h3 className="text-gray-800 mb-3 ,n=3">{item.heading}</h3>
-                    <ul className="list-none">
-                      {item.links.map((link, index) => (
-                        <li className="mb-2" key={link.label}>
-                          <Link
-                            href={link.href}
-                            className={`${
-                              link.badge ? "flex gap-2 items-center" : ""
-                            }
-                            text-gray-500 duration-300 transition-all ease-in-out hover:text-orange-400`}
-                          >
-                            {link.badge ? (
-                              <>
-                                <span>{link.label}</span>
-                                <span
-                                  className="py-0.5 px-2 rounded-full bg-orange-100
-                                    border border-orange-600 text-[10px] text-orange-600
-                                    font-semibold invisible sm:visible"
-                                >
-                                  {link.badge}
-                                </span>
-                              </>
-                            ) : (
-                              link.label
-                            )}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
+const Footer = ({ className }) => {
+  return (
+    <footer className={`${className} overflow-hidden w-full h-full z-[2] `}>
+      <div className="container mx-auto px-4 relative mt-10">
+        <div className="md:flex ">
+          <div className="md:w-4/12 mb-5 md:mb-0">
+            <Link href="#" className="text-[28px] text-orange-400 font-bold">
+              Unlcoaching
+              <span className="text-white">.</span>
+            </Link>
+            <br />
+            <div className="flex mt-5 pr-10">
+              <span>
+                <Link
+                  href="#"
+                  className="text-[28px] text-white hover:text-orange-200 font-bold mr-10"
+                >
+                  <FaInstagramSquare />
+                </Link>
+              </span>
+              <span>
+                <Link
+                  href="#"
+                  className="text-[28px] text-white  hover:text-orange-200  font-bold mr-10"
+                >
+                  <FaFacebook />
+                </Link>
+              </span>
+              <span>
+                <Link
+                  href="#"
+                  className="text-[28px] text-white hover:text-orange-200 font-bold mr-10"
+                >
+                  <FaLinkedin />
+                </Link>
+              </span>
             </div>
           </div>
-          < Copyright/>
-        </div>
-      </footer>
-  );
-};
 
-export default Footer;
+          <div className="md:w-8/12 ">
+            <div className="grid grid-cols-3 md:grid-cols-3 ">
+              {footerContent.footerLinks.map((item, index) => (
+                <div className="mb-5 md:mb-0" key={item.heading}>
+                  <h3 className="text-gray-400 mb-3">{item.heading}</h3>
+                  <ul className="list-none">
+                    {item.links.map((link, index) => (
+                      <li className="mb-2" key={link.label}>
+                        <Link
+                          href={link.href}
+                          className={`${
+                            link.badge ? 'flex gap-2 items-center' : ''
+                          }
+                            text-white duration-300 transition-all ease-in-out hover:text-orange-400`}
+                        >
+                          {link.badge ? (
+                            <>
+                              <span>{link.label}</span>
+                              <span
+                                className="py-0.5 px-1 rounded-full bg-orange-100
+                                    border border-orange-400 text-[10px] text-orange-400
+                                    invisible sm:visible"
+                              >
+                                {link.badge}
+                              </span>
+                            </>
+                          ) : (
+                            link.label
+                          )}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>{' '}
+        {/* Version 2 */}
+        <p className="text-right items-right mx-auto text-sm pb-0">
+          <Link
+            href="/document/privacy"
+            className="text-orange-400 hover:text-white"
+          >
+            Privacy{' '}
+          </Link>{' '}
+          <Link
+            href="/document/terms"
+            className="text-white hover:text-orange-400"
+          >
+            Terms{' '}
+          </Link>
+        </p>
+        <Copyright />
+      </div>
+      <div className="transform-gpu blur-3xl ">
+        <div className="absolute -mt-20 left-0 opacity-50 -z-50 w-32 h-48 md:w-80 md:h-96 bg-gradient-to-tr from-[#e78738] to-[#fb923c]"></div>
+        <div className="absolute -mt-20 right-0 opacity-0 md:opacity-50 -z-50 w-80 h-96 bg-gradient-to-tr from-[#e78738] to-[#fb923c]"></div>
+      </div>
+    </footer>
+  )
+}
+
+export default Footer
