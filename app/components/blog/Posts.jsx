@@ -4,11 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { allPosts } from 'contentlayer/generated'
 import { compareDesc, format, parseISO } from 'date-fns';
-import ReactPaginate from 'react-paginate'
-
-
 import { motion } from 'framer-motion'
-import Banner from '../Banner'
 
 const Items = ({ currentItems }) => {
   return (
@@ -133,29 +129,6 @@ const Posts = ({ className, itemsPerPage, archive= false, params }) => {
         <div className="lg:w-10/12 mx-auto mb-20 grid grid-cols-1 md:grid-cols-2
           lg:grid-cols-3 gap-10 ">
             <Items currentItems={currentItems} />
-        </div>
-
-        <div className="lg:w-10/12 mx-auto flex flex-wrap">
-          <ReactPaginate
-              nextLabel="Next"
-              onPageChange={handlePageClick}
-              pageRangeDisplayed={3}
-              marginPagesDisplayed={2}
-              pageCount={pageCount}
-              previousLabel="Previous"
-              pageClassName="page-item"
-              pageLinkClassName="page-link"
-              previousClassName="page-item"
-              previousLinkClassName="page-link"
-              nextClassName="page-item"
-              nextLinkClassName="page-link"
-              breakLabel="..."
-              breakClassName="page-item"
-              breakLinkClassName="page-link"
-              containerClassName="pagination"
-              activeClassName="active"
-              renderOnZeroPageCount={null}
-            />
         </div>
       </div>
     </section>
