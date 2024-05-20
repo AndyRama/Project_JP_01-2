@@ -15,7 +15,7 @@ export default function Home() {
       <CardGridImage />
       <CardDescription className="pb-15 sm:bg-[#1D1D1D]" />
       <RecentBlog className="pt-14 pb-15 lg:pb-32"/>
-      <Subscribe className="py-16 pt-64 -mt-48 lg:py-32"/>
+      <Subscribe className="py-16 pt-64 lg:py-32 bg-[#1D1D1D]"/>
     </>
   )
 }

@@ -55,7 +55,7 @@ const PostCard = ({ index, post }) => {
             inline-block  duration-300 transistion-all bg-white-600
             ease-in-out relative before:content-['']
             before:absolute before:bottom-0 before:left-0 before:w-full
-            before:h-[2px] before:bg-orange-600 before:origin-[100%, 50%]
+            before:h-[2px] before:bg-orange-400 before:origin-[100%, 50%]
             before:transistion-all before:duration-300 before:ease-in-out
             before:scale-x-0 before:scale-y-[1] before:scale-z[1]
             before:wil-change-transform hover:before:origin-[100%, 0%]
@@ -90,7 +90,7 @@ const RecentBlog = ({ className }) => {
                 }}
                 viewport={{ once: true }}
                 className="uppercase tracking-[3px] text-sm mb-5 inline-block
-                 text-gray-500">
+                 text-orange-400">
                     { recentBlogContent.heading.subTitle }
               </motion.span>
               )}
@@ -106,7 +106,7 @@ const RecentBlog = ({ className }) => {
                     },
                   }}
                   viewport={{ once: true }}
-                  className="text-2xl lg:text-4xl mb-4 lg:mb-0 ">
+                  className="text-2xl lg:text-4xl mb-4 lg:mb-0 text-white">
                  { recentBlogContent.heading.title }
                 </motion.h2>
               )}
