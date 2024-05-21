@@ -89,7 +89,7 @@ const BlogContent = ({ post }) => {
 
         {/* Content Article */}
         <div className="flex">
-          <CardCategory className="w-3/12 mr-2" />
+          <CardCategory className="hidden lg:contents w-3/12 mr-2" />
           <article className="prose mx-auto max-w-2xl">
             <MDXContent />
           </article>
