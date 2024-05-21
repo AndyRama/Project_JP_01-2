@@ -11,8 +11,8 @@ const page = () => {
   return (
     <>
       <SubHero className="pt-32" title="Dernier articles" subTitle="Mon blog" />
-      <Posts className="pt-0 pb-32" itemsPerPage={9} />
-      <Subscribe className="py-16 pt-64 lg:py-32 " />
+      <Posts className="pt-0 pb-52" itemsPerPage={9} />
+      <Subscribe className="py-16 lg:py-32" />
     </>
   )
 }
