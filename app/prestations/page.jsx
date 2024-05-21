@@ -3,7 +3,7 @@ import SubHero from './../components/about/SubHero'
 import PricingPack from '../components/prestation/PricingPack'
 
 export const metadata = {
-  title: 'Prestations Unlcoaching',
+  title: 'Terms - Unlcoaching by Jeremy Prat',
 }
 const page = () => {
   return (

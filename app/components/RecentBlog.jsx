@@ -8,10 +8,10 @@ import Image from 'next/image'
 
 const recentBlogContent = {
   heading: {
-    title: 'Recent Update',
-    subTitle: 'Our Blog',
+    title: 'Articles récents',
+    subTitle: 'Mon blog',
     description:
-      "Nous nous spécialisons dans la création d'applications web sur-mesure, destinées à optimiser le quotidien de nos clients.",
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elitd non pariatur veritatis ipsum dolorsit amet consectetur, adipisicing elitd non pariatur veritatis it amet consectetur, adipisicing elitd non pariatur veritatis..',
   },
 }
 const PostCard = ({ index, post }) => {
