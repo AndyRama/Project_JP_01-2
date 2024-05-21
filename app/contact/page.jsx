@@ -11,7 +11,7 @@ const page = () => {
       <CardContact />
       <ContactForm className="lg:mt-[-145px] lg:pb-28" />
       <SubHero className="hidden lg:contents pt-32" />
-      <Subscribe className="py-16 lg:py-32 lg:mt-[-36rem]" />
+      <Subscribe className="py-16 lg:py-32 lg:mt-[-35rem]" />
     </>
   )
 }
