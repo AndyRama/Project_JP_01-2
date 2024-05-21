@@ -75,14 +75,14 @@ const PricingDetails = ({ className }) => {
                       items-start "
                     >
                       <div>
-                        <span className="text-3xl text-orange-400">
-                          <feature.icon />
-                        </span>
-                      </div>
-                      <div>
-                        <h3 className="text-lg mb-4 text-white">
-                          {feature.title}
-                        </h3>
+                        <div className="flex">
+                          <span className="text-3xl text-orange-400 mr-4">
+                            <feature.icon />
+                          </span>
+                          <h3 className="text-lg mb-4 text-white">
+                            {feature.title}
+                          </h3>
+                        </div>
                         <p
                           className="leading-relaxed text-[15px] text-white
                           text-opacity-75 mb-7 text-justify"
