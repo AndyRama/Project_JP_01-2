@@ -6,9 +6,9 @@ import Image from 'next/image'
 import { allPosts } from 'contentlayer/generated'
 import { compareDesc, format, parseISO } from 'date-fns'
 import { motion } from 'framer-motion'
-import ReactPaginate from 'react-paginate'
 import CardCategory from '../CardCategory'
 
+// import ReactPaginate from 'react-paginate'
 const Items = ({ currentItems }) => {
   return (
     <>
@@ -139,13 +139,16 @@ const Posts = ({ className, itemsPerPage, archive = false, params }) => {
   return (
     <>
       <section className={`${className}`} ref={ref}>
-        <div className="container mt-10 pl-0 w-auto flex justify-around">
-          <CardCategory className="hidden lg:contents lg:w-3/12 lg:mx-2" />
-          <div className="w-12/12 lg:w-10/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-            <Items currentItems={currentItems} />
+        <div className="container mx-auto mt-10 w-auto ">
+          <div className="flex">
+            <CardCategory />
+
+            <div className="lg:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+              <Items currentItems={currentItems} />
+            </div>
           </div>
         </div>
-        <div className="lg:w-10/12 mx-auto flex flex-wrap text-white mt-20">
+        {/* <div className="lg:w-10/12 mx-auto flex flex-wrap text-white mt-20">
           <ReactPaginate
             nextLabel="Next"
             onPageChange={handlePageClick}
@@ -166,7 +169,7 @@ const Posts = ({ className, itemsPerPage, archive = false, params }) => {
             activeClassName="active"
             renderOnZeroPageCount={null}
           />
-        </div>
+        </div> */}
       </section>
     </>
   )
