@@ -1,0 +1,178 @@
+'use client'
+import React from 'react'
+import { motion } from 'framer-motion'
+
+const pricingOptions = [
+  {
+    title: ' Programmation niveau',
+    subtitle: 'Débutant(4 Mois)',
+    price: '150€',
+    subPrice: '(3 * 150€ / 3 mois) ',
+    features: [
+      'Pack adapté aux débutants dans la musculation.',
+      'Programme de musculation personalisé en fonction de tes objectifs.',
+      'Accompagnement sur les divers TCA ou problématique de santé.',
+      'Plan alimentaire adapté à tes besoins.',
+      'Bilan mensuel photo + mensuration avec un suivi plus approfondi.',
+      'Communication whatsApp & Email + visio ou call chaque mois.',
+    ],
+  },
+  {
+    title: ' Programmation niveau',
+    subtitle: 'Intermerdaire (4 Mois)',
+    price: '150€',
+    subPrice: '(3 * 150€ / 3 mois) ',
+    features: [
+      'Pack adapté aux initiés ayant déja des bases en musculation.',
+      'Programme de musculation personalisé en fonction de tes objectifs. ',
+      'Plan alimentaire adapté à tes besoins.',
+      'Accompagnement sur les divers TCA ou problématique de santé.',
+      'Bilan mensuel photo + mensuration avec un suivi plus approfondi.',
+      'Communication whatsApp & Email + visio ou call chaque mois.',
+    ],
+  },
+  {
+    title: ' Programmation niveau',
+    subtitle: 'Confirmé (4 Mois)',
+    price: '150€',
+    subPrice: '(3 * 150€ / 3 mois) ',
+    features: [
+      'Pack adapté aux initiés ayant déja des bases en musculation depuis plusieurs années.',
+      'Programme de musculation personalisé en fonction de tes objectifs. ',
+      'Plan alimentaire adapté à tes besoins.',
+      'Accompagnement sur les divers TCA ou problématique de santé.',
+      'Bilan mensuel photo + mensuration avec un suivi plus approfondi.',
+      'Communication whatsApp & Email + visio ou call chaque mois.',
+    ],
+  },
+  {
+    title: ' Programmation niveau',
+    subtitle: 'Débutant(1 Mois)',
+    price: '150€',
+    subPrice: '(1 * 150€ / 1 mois) ',
+    features: [
+      'Pack adapté aux débutants en musculation.',
+      'Programme de musculation personalisé en fonction de tes objectifs.',
+      'Plan alimentaire adapté à tes besoins.',
+      'Accompagnement sur les divers TCA ou problématique de santé.',
+      'Bilan mensuel par email après 4 semaines pour le suivie.',
+    ],
+  },
+  {
+    title: ' Programmation niveau',
+    subtitle: 'Intermerdaire (1 Mois)',
+    price: '150€',
+    subPrice: '(1 * 150€ / 1 mois) ',
+    features: [
+      'Pack adapté aux initiés ayant déja des bases en musculation.',
+      'Programme de musculation personalisé en fonction de tes objectifs. ',
+      'Plan alimentaire adapté à tes besoins.',
+      'Accompagnement sur les divers TCA ou problématique de santé.',
+      'Bilan mensuel par email après 4 semaines.',
+    ],
+  },
+  {
+    title: ' Programmation niveau',
+    subtitle: 'Confirmé (1 Mois)',
+    price: '150€',
+    subPrice: '(1 * 150€ / 1 mois) ',
+    features: [
+      'Pack adapté aux initiés ayant déja des bases en musculation.',
+      'Programme de musculation personalisé en fonction de tes objectifs. ',
+      'Plan alimentaire adapté à tes besoins.',
+      'Accompagnement sur les divers TCA ou problématique de santé.',
+      'Bilan mensuel par email après 4 semaines.',
+    ],
+  },
+]
+
+const PricingPack = () => {
+  const delay = (index) => index * 0.05
+
+  return (
+    <section className="mt-10 mb-20">
+      <div className="transform-gpu blur-3xl">
+        <div className="absolute right-0 opacity-30 md:opacity-50 -z-20 w-48 h-52 bg-gradient-to-tr from-[#fb923c] to-[#e78738]"></div>
+      </div>
+      <h2
+        id="pack"
+        className="text-white text-2xl md:text-5xl text-center mb-20"
+      >
+        Pack <br />
+        Musculation / Perte de poids
+      </h2>
+      <div className="container px-4 md:px-16 mx-auto">
+        {/* Main Card Pricing - content  */}
+        <div className="flex flex-wrap ">
+          {pricingOptions.map((option, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: delay(index), duration: 0.5 }}
+              className="w-full sm:w-1/2 lg:w-1/3 p-2"
+            >
+              <div className="p-10 bg-[#2F2E2E] rounded-md">
+                {/* Card Pricing - Header - Title */}
+                <p className="text-3xl mb-1 text-center text-white">
+                  {option.title}
+                </p>
+                {/* Card Pricing - Header - subTitle */}
+                <p className="text-xl mb-6 text-orange-400 text-center">
+                  {option.subtitle}
+                </p>
+                <hr />
+                {/* Card Pricing - Header - Price  */}
+                <p className="mt-2 mb-1 text-center">
+                  <span className="text-4xl text-orange-400  mt-6 mr-2">
+                    {option.price}
+                  </span>
+                  <span className="text-orange-400 tracking-tight">/ Mois</span>
+                </p>
+                {/* Card Pricing - Header - subPrice  */}
+                <p className="text-xl mb-6 text-white text-center">
+                  {option.subPrice}
+                </p>
+
+                {/* Card Pricing - btn - action */}
+
+                <motion.a
+                  href="#"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: delay(pricingOptions.length),
+                    duration: 0.5,
+                  }}
+                  className="inline-flex justify-center items-center text-black text-center
+                   w-full h-12 p-5 tracking-tight text-xl bg-orange-400 hover:bg-transparent
+                   hover:border hover:border-orange-400 hover:text-white rounded-md transition 
+                   duration-200"
+                >
+                  Choisir le plan
+                </motion.a>
+
+                {/* Card Pricing - main - contents */}
+                <ul>
+                  {option.features.map((feature, index) => (
+                    <motion.li
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: delay(index), duration: 0.5 }}
+                      className="mt-8 flex items-center text-orange-400"
+                    >
+                      •<span className="ml-2 text-white">{feature}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default PricingPack

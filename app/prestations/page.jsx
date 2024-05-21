@@ -1,5 +1,6 @@
 import React from 'react'
 import SubHero from './../components/about/SubHero'
+import PricingPack from '../components/prestation/PricingPack'
 
 export const metadata = {
   title: 'Prestations Unlcoaching',
@@ -7,7 +8,8 @@ export const metadata = {
 const page = () => {
   return (
     <>
-      <SubHero className="pt-32" title="Prestations" subTitle="toutes mes" />
+      <SubHero className="pt-32" title="Prestations" />
+      <PricingPack />
     </>
   )
 }
