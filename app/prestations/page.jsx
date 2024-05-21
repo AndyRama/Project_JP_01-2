@@ -5,7 +5,7 @@ import PricingDetails from '../components/prestation/PricingDetails'
 import PricingEbook from '../components/prestation/PricingEbook'
 
 export const metadata = {
-  title: 'Terms - Unlcoaching by Jeremy Prat',
+  title: 'Unlcoaching by Jeremy Prat',
 }
 const page = () => {
   return (
