@@ -16,7 +16,7 @@ const page = () => {
       <PricingDetails />
       <PricingEbook />
       <SubHero className="hidden lg:contents" />
-      <Subscribe className="py-16 lg:py-32 lg:mt-[-41rem]" />
+      <Subscribe className="py-16 lg:py-32 lg:mt-[-36rem]" />
     </>
   )
 }
