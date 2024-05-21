@@ -1,35 +1,36 @@
-"use client";
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { allPosts } from "contentlayer/generated";
-import { compareDesc, format, parseISO } from "date-fns";
-import PostCard from "@/app/components/blog/category/PostCard";
+'use client'
+import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { motion } from 'framer-motion'
+import { allPosts } from 'contentlayer/generated'
+import { compareDesc, format, parseISO } from 'date-fns'
+import PostCard from '@/app/components/blog/category/PostCard'
+import CardCategory from '@/app/components/CardCategory'
 
-import { getMDXComponent } from "next-contentlayer/hooks";
+import { getMDXComponent } from 'next-contentlayer/hooks'
 
 function slugify(str) {
   return str
     .toLowerCase()
-    .replace(/[^a-z0-9 -]/g, "")
-    .replace(/\s+/g, "-")
-    .replace(/-+/g, "-");
+    .replace(/[^a-z0-9 -]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
 }
 
 const BlogContent = ({ post }) => {
   const posts = allPosts.sort((a, b) =>
-    compareDesc(new Date(a.date), new Date(b.date))
-  );
+    compareDesc(new Date(a.date), new Date(b.date)),
+  )
 
-  let MDXContent;
+  let MDXContent
 
-  if (!posts) return null;
+  if (!posts) return null
 
   if (!post) {
-    console.log("Blog Post not found");
+    console.log('Blog Post not found')
   } else {
-    MDXContent = getMDXComponent(post.body.code);
+    MDXContent = getMDXComponent(post.body.code)
   }
 
   return (
@@ -55,7 +56,7 @@ const BlogContent = ({ post }) => {
 
           <p className="text-slate-500 mt-10 text-center">
             <span className="inline-flex space-x-3">
-              <span>{format(parseISO(post.date), "LLL d, yyyy")}</span>
+              <span>{format(parseISO(post.date), 'LLL d, yyyy')}</span>
               <span>•</span>
               <span>{post.author}</span>
             </span>
@@ -81,18 +82,21 @@ const BlogContent = ({ post }) => {
             src={post.image}
             width={1065}
             height={644}
-            className="object-cover object-top rounded-md"
+            className="object-cover object-top rounded-md w-full"
             alt={post.title}
           />
         </div>
 
         {/* Content Article */}
-        <article className="prose mx-auto max-w-2xl">
-          <MDXContent />
-        </article>
+        <div className="flex">
+          <CardCategory className="w-3/12 mr-2" />
+          <article className="prose mx-auto max-w-2xl">
+            <MDXContent />
+          </article>
+        </div>
 
         <div className="max-w-4xl mx-auto mt-20 lg:mt-32">
-          <h2 className="text-2xl text-gray-700 mb-10"> 
+          <h2 className="text-2xl text-gray-700 mb-10">
             Plus d&apos;article de blogs
           </h2>
 
@@ -101,8 +105,8 @@ const BlogContent = ({ post }) => {
             {posts
               .filter((a) => post.title !== a.title)
               .map((item, index) => {
-                if (index > 2) return null;
-                return <PostCard key={index} index={index} post={item} />;
+                if (index > 2) return null
+                return <PostCard key={index} index={index} post={item} />
               })}
           </div>
 
@@ -120,7 +124,7 @@ const BlogContent = ({ post }) => {
         </div>
       </div>
     </motion.div>
-  );
-};
+  )
+}
 
-export default BlogContent;
+export default BlogContent

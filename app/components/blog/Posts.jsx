@@ -1,4 +1,5 @@
 'use client'
+
 import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -138,13 +139,13 @@ const Posts = ({ className, itemsPerPage, archive = false, params }) => {
   return (
     <>
       <section className={`${className}`} ref={ref}>
-        <div className="container mt-10 pl-0 w-auto flex ">
-          <CardCategory className="hidden lg:contents lg:w-2/12 lg:mx-2" />
+        <div className="container mt-10 pl-0 w-auto flex justify-around">
+          <CardCategory className="hidden lg:contents lg:w-3/12 lg:mx-2" />
           <div className="w-12/12 lg:w-10/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             <Items currentItems={currentItems} />
           </div>
         </div>
-        <div className="lg:w-10/12 mx-auto flex flex-wrap text-white">
+        <div className="lg:w-10/12 mx-auto flex flex-wrap text-white mt-20">
           <ReactPaginate
             nextLabel="Next"
             onPageChange={handlePageClick}

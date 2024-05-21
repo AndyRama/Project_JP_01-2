@@ -1,52 +1,58 @@
-"use client"
+'use client'
+
 import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { allPosts } from 'contentlayer/generated'
-import { compareDesc, format, parseISO } from 'date-fns';
+import { compareDesc, format, parseISO } from 'date-fns'
+import CardCategory from '../../CardCategory'
 
 import { motion } from 'framer-motion'
 
 const Items = ({ currentItems, Post }) => {
-
   return (
     <>
-      { currentItems &&
+      {currentItems &&
         currentItems.map((post, index) => {
           index *= 0.05
           return (
             <motion.div
-              initial = {{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{
                 opacity: 1,
                 y: 0,
                 transition: {
                   delay: index,
-                  duration: 0.3
-                }
+                  duration: 0.3,
+                },
               }}
-              viewport={ { once: true}}
-              className='bg-[#2F2E2E] relative overflow-hidden group rounded-md'
-              key={post.title}>
-              <Link href={`/${post.url}`} 
-                className='relative block overflow-hidden'
+              viewport={{ once: true }}
+              className="bg-[#2F2E2E] relative overflow-hidden group rounded-md"
+              key={post.title}
+            >
+              <Link
+                href={`/${post.url}`}
+                className="relative block overflow-hidden"
               >
                 <Image
                   src={post.image}
                   alt={post.title}
                   width={1064}
                   height={644}
-                  className='object-cover object-center h-[200px] duration-300
-                    transition-all ease-in-out group-hover:scale-[1.05] rounded-t-md'
+                  className="object-cover object-center h-[200px] duration-300
+                    transition-all ease-in-out group-hover:scale-[1.05] rounded-t-md"
                 />
                 <div className="p-8">
-                  <p className='text-white mb-3 uppercase text-[12px] tracking-[1px]'>
-                    { format(parseISO(post.date), "LLL d, yyyy")} • { post.author}
+                  <p className="text-white mb-3 uppercase text-[12px] tracking-[1px]">
+                    {format(parseISO(post.date), 'LLL d, yyyy')} • {post.author}
                   </p>
 
                   <h3 className="mb-4">
-                    <Link href={`/${post.url}`} className='text-white text-lg leading-none'>
-                      { post.title }
+                    <Link
+                      href={`/${post.url}`}
+                      className="text-white text-lg leading-none"
+                    >
+                      {post.title}
                     </Link>
                   </h3>
                   <p>
@@ -62,22 +68,19 @@ const Items = ({ currentItems, Post }) => {
                         before:wil-change-transform hover:before:origin-[100%, 0%]
                         hover:before:scale-x-[1] hover:before:scale-y-[1]
                         hover:before:scale-z-[1]`}
-                      >
-                          lire l&apos;article
+                    >
+                      lire l&apos;article
                     </Link>
                   </p>
-
                 </div>
               </Link>
             </motion.div>
           )
-        })
-      }
+        })}
     </>
   )
 }
-const Posts = ({ className, itemsPerPage, archive= false, params }) => {
-
+const Posts = ({ className, itemsPerPage, archive = false, params }) => {
   const [currentItems, setCurrentItems] = useState(null)
   const [pageCount, setPageCount] = useState(0)
   const [itemOffset, setItemOffset] = useState(0)
@@ -86,22 +89,22 @@ const Posts = ({ className, itemsPerPage, archive= false, params }) => {
 
   let items = null
 
-  if(archive === false) {
-    items = allPosts.sort((a,b) =>
-      compareDesc(new Date(a.date), new Date(b.date))
+  if (archive === false) {
+    items = allPosts.sort((a, b) =>
+      compareDesc(new Date(a.date), new Date(b.date)),
     )
   } else {
-    if(params?.slug) {
+    if (params?.slug) {
       items = allPosts.filter((post) =>
         post.categories.some(
           (category) =>
             category.title
-            .toLowerCase()
-            .trim()
-            .replace(/[^\w\s-]/g, "")
-            .replace(/[\s_-]+/g, "-")
-            .replace(/^-+|-+$/g, "") === params.slug
-        )
+              .toLowerCase()
+              .trim()
+              .replace(/[^\w\s-]/g, '')
+              .replace(/[\s_-]+/g, '-')
+              .replace(/^-+|-+$/g, '') === params.slug,
+        ),
       )
     }
   }
@@ -111,13 +114,22 @@ const Posts = ({ className, itemsPerPage, archive= false, params }) => {
     setCurrentItems(items.slice(itemOffset, endOffset))
     setPageCount(Math.ceil(items.length / itemsPerPage))
 
-    if(clickPaginate === true) {
+    if (clickPaginate === true) {
       setTimeout(function () {
-        ref.current?.scrollIntoView({ block: "start", behavior: "smooth"})
+        ref.current?.scrollIntoView({ block: 'start', behavior: 'smooth' })
       }, 300)
       setClickPaginate(false)
     }
-  }, [setCurrentItems, setPageCount, setClickPaginate, itemOffset, itemsPerPage, clickPaginate, ref, Items])
+  }, [
+    setCurrentItems,
+    setPageCount,
+    setClickPaginate,
+    itemOffset,
+    itemsPerPage,
+    clickPaginate,
+    ref,
+    Items,
+  ])
 
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % items.length
@@ -125,17 +137,20 @@ const Posts = ({ className, itemsPerPage, archive= false, params }) => {
     setItemOffset(newOffset)
   }
 
-  if(!items) return null
+  if (!items) return null
 
   return (
     <section className={`${className}`} ref={ref}>
       <div className="container px-4 mx-auto">
-        <div className="lg:w-10/12 mx-auto mb-20 grid grid-cols-1 md:grid-cols-2
-          lg:grid-cols-3 gap-10 ">
+        <div className="flex">
+          <CardCategory />
+          <div
+            className="lg:w-10/12 mx-auto mb-20 grid grid-cols-1 md:grid-cols-2
+          lg:grid-cols-3 gap-3 "
+          >
             <Items currentItems={currentItems} />
+          </div>
         </div>
-
-       
       </div>
     </section>
   )

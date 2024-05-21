@@ -61,7 +61,7 @@ const CardCategory = ({ className }) => {
             }}
             viewport={{ once: true }}
             whileHover={{ y: -10, transition: 0.1 }}
-            className="group duration-300 bg-[#2F2E2E] relative overflow-hidden hover:shadow-2xl rounded-md h-[365px] mr-2"
+            className="group duration-300 bg-[#2F2E2E] relative overflow-hidden hover:shadow-2xl rounded-md h-[365px] mr-3"
           >
             <div className="px-2 lg:px-4 mt-10 mb-10 relative flex flex-col gap-3 items-start ">
               <span className="text-2xl flex">
