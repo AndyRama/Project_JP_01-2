@@ -57,7 +57,7 @@ const programs = [
 const CardProgram = ({ className }) => {
   return (
     <section className={`${className}`}>
-      <div className="container px-4 md:px-8 mx-auto w-9/12 mb-10">
+      <div className="container px-4 md:px-8 mx-auto w-11/12 mb-10">
         <motion.span
           initial={{ opacity: 0, y: 20 }}
           whileInView={{
@@ -69,7 +69,7 @@ const CardProgram = ({ className }) => {
             },
           }}
           viewport={{ once: true }}
-          className="uppercase tracking-[3px] text-sm inline-block text-orange-400 mb-5"
+          className="uppercase tracking-[3px] text-sm inline-block text-orange-400"
         >
           {program.heading.subTitle}
         </motion.span>

@@ -1,17 +1,19 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { allPosts } from ".contentlayer/generated";
-import { compareDesc, format, parseISO } from "date-fns";
-import Link from "next/link";
-import Image from "next/image";
+'use client'
+import React, { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
+import { allPosts } from '.contentlayer/generated'
+import { compareDesc, format, parseISO } from 'date-fns'
+import Link from 'next/link'
+import Image from 'next/image'
 
 const recentBlogContent = {
   heading: {
-    title: "Recent Update",
-    subTitle: "Our Blog",
-    description:"Nous nous spécialisons dans la création d'applications web sur-mesure, destinées à optimiser le quotidien de nos clients."  },
-};
+    title: 'Recent Update',
+    subTitle: 'Our Blog',
+    description:
+      "Nous nous spécialisons dans la création d'applications web sur-mesure, destinées à optimiser le quotidien de nos clients.",
+  },
+}
 const PostCard = ({ index, post }) => {
   index *= 0.05
   return (
@@ -26,7 +28,8 @@ const PostCard = ({ index, post }) => {
         },
       }}
       viewport={{ once: true }}
-      className="bg-[#2F2E2E] relative overflow-hidden group rounded ">
+      className="bg-[#2F2E2E] relative overflow-hidden group rounded "
+    >
       <Link href={post.url} className="relative block overflow-hidden">
         <Image
           src={post.image}
@@ -40,7 +43,7 @@ const PostCard = ({ index, post }) => {
 
       <div className="p-6 ">
         <p className="text-white mb-2 uppercase text-[12px] tracking-[1px]">
-          { format(parseISO(post.date), "LLL d, yyyy" )} • {post.author}
+          {format(parseISO(post.date), 'LLL d, yyyy')} • {post.author}
         </p>
 
         <h3 className="mb-4 text-white">
@@ -71,13 +74,15 @@ const PostCard = ({ index, post }) => {
 }
 
 const RecentBlog = ({ className }) => {
-  const posts = allPosts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
+  const posts = allPosts.sort((a, b) =>
+    compareDesc(new Date(a.date), new Date(b.date)),
+  )
   return (
     <section className={`${className}`}>
-      <div className="container px-4 mx-auto rounded-md">
-        <div className=" px-4 md:px-20 lg:flex justify-center mb-2">
-            <div className="lg:w-7/12">
-               {recentBlogContent.heading.subTitle && (
+      <div className="container mx-auto rounded-md">
+        <div className=" px-4 lg:px-20 lg:flex justify-center mb-2">
+          <div className="lg:w-7/12">
+            {recentBlogContent.heading.subTitle && (
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{
@@ -90,56 +95,59 @@ const RecentBlog = ({ className }) => {
                 }}
                 viewport={{ once: true }}
                 className="uppercase tracking-[3px] text-sm mb-5 inline-block
-                 text-orange-400">
-                    { recentBlogContent.heading.subTitle }
+                 text-orange-400"
+              >
+                {recentBlogContent.heading.subTitle}
               </motion.span>
-              )}
-              { recentBlogContent.heading.title && (
-                <motion.h2
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{
-                    opacity: 1,
-                    y: 0,
-                    transition: {
-                      delay: 0.1,
-                      duration: 0.5,
-                    },
-                  }}
-                  viewport={{ once: true }}
-                  className="text-2xl lg:text-4xl mb-4 lg:mb-0 text-white">
-                 { recentBlogContent.heading.title }
-                </motion.h2>
-              )}
-
-            </div>
-            <div className="lg:w-5/12 self-end">
-              <motion.p
+            )}
+            {recentBlogContent.heading.title && (
+              <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{
                   opacity: 1,
                   y: 0,
                   transition: {
-                    delay: 0.15,
+                    delay: 0.1,
                     duration: 0.5,
                   },
                 }}
                 viewport={{ once: true }}
-                className="text-gray-500">
-                  {recentBlogContent.heading.description}
-              </motion.p>
-            </div>
+                className="text-2xl lg:text-4xl mb-4 lg:mb-0 text-white"
+              >
+                {recentBlogContent.heading.title}
+              </motion.h2>
+            )}
+          </div>
+          <div className="lg:w-5/12 self-end">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delay: 0.15,
+                  duration: 0.5,
+                },
+              }}
+              viewport={{ once: true }}
+              className="text-white"
+            >
+              {recentBlogContent.heading.description}
+            </motion.p>
           </div>
         </div>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4
-          gap-4 w-full lg:w-10/12 mx-auto mt-10 ">
-            {posts.slice(0, 4).map((post, index) => (
-
-              <PostCard key={index} index={ index} post={post}/>
-            ))}
-        </div>
+      <div
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4
+          gap-4 w-full lg:w-10/12 mx-auto mt-10 "
+      >
+        {posts.slice(0, 4).map((post, index) => (
+          <PostCard key={index} index={index} post={post} />
+        ))}
+      </div>
     </section>
-  );
-};
+  )
+}
 
-export default RecentBlog;
+export default RecentBlog

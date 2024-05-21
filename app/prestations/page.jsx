@@ -7,8 +7,8 @@ export const metadata = {
 const page = () => {
   return (
     <>
-    <SubHero className="pt-32" title="Prestations" />
-   </>
+      <SubHero className="pt-32" title="Prestations" subTitle="toutes mes" />
+    </>
   )
 }
 

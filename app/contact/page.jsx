@@ -6,7 +6,7 @@ import CardContact from '../components/contact/CardContact'
 const page = () => {
   return (
     <>
-      <SubHero className="pt-32 pb-24" title="Contact" subTitle="" />
+      <SubHero className="pt-32 pb-24" title="Contacter" subTitle="pour me" />
       <CardContact />
       <ContactForm />
     </>
