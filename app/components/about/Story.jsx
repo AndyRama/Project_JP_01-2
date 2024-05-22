@@ -96,11 +96,11 @@ const storyContent = {
 
   storyText: {
     heading: 'Crafting Spaces, Shaping Dreams',
-    p1: 'Envisioned by a group of passionate architects, our story is one of perseverance and boundless creativity. We started as a small team with big dreams, driven by the belief that architecture holds the power to shape lives and communities. Through years of dedication and unwavering commitment, we have evolved into a dynamic force, seamlessly blending aesthetics with functionality to create spaces that inspire and endure.',
-    p2: 'Our journey has been defined by our relentless pursuit of excellence and our eagerness to embrace new challenges. From the early projects that ignited our spark to the iconic structures that now stand as testaments to our vision, every step of our journey is etched with a passion for innovation. Today, we stand on the shoulders of our accomplishments, guided by the same spirit that set us on this path – to shape a world that celebrates the harmony of design, environment, and human experience.',
+    p1: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga maxime molestias cumque consequuntur vero iure debitis odio repudiandae ut saepe. Velit consectetur corporis quod impedit adipisci, voluptatem rerum laborum accusantium! ',
+    p2: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit hic earum qui quia. Error deserunt magnam labore maiores explicabo autem tempore iusto, expedita eligendi quibusdam dicta, illo quidem velit quas.',
     signature: '/images/Bill_Smith_Signature.svg',
-    name: 'Bill Smith',
-    roleTitle: 'CEO and Co-Founder',
+    name: 'Jeremy Prat |',
+    roleTitle: 'Coach Sportif',
   },
 }
 
@@ -190,6 +190,50 @@ const Story = ({ className }) => {
             })}
           </div>
         </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: { delay: 0.3, duration: 0.5 },
+          }}
+          viewport={{ once: true }}
+          className="lg:flex flex-col mt-32 text-left w-full lg:w-6/12 mx-auto"
+        >
+          {storyContent.storyText.heading && (
+            <h2 className="text-2xl md:text-3xl text-white mb-5">
+              {storyContent.storyText.heading}
+            </h2>
+          )}
+
+          {storyContent.storyText.p1 && (
+            <p className="leading-relaxed text-white mb-7">
+              {storyContent.storyText.p1}
+            </p>
+          )}
+
+          {storyContent.storyText.p2 && (
+            <p className="leading-relaxed text-white mb-7">
+              {storyContent.storyText.p2}
+            </p>
+          )}
+
+          <p>
+            <Image
+              src={storyContent.storyText.signature}
+              alt={storyContent.storyText.name}
+              width={338}
+              height={113}
+              className="w-48 block mb-2"
+            />
+            <strong className="block mb-2 text-white font-medium">
+              {storyContent.storyText.name + ' '}
+              <span className="text-orange-400">
+                {storyContent.storyText.roleTitle}
+              </span>
+            </strong>
+          </p>
+        </motion.div>
       </div>
     </section>
   )
