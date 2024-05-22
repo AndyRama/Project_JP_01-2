@@ -90,14 +90,14 @@ const BlogContent = ({ post }) => {
         {/* Content Article */}
         <div className="flex">
           <CardCategory className="hidden lg:contents w-3/12 mr-2" />
-          <article className="prose mx-auto max-w-2xl">
+          <article className="prose mx-auto max-w-3xl">
             <MDXContent />
           </article>
         </div>
 
-        <div className="max-w-4xl mx-auto mt-20 lg:mt-32">
+        <div className="max-w-5xl mx-auto mt-20 lg:mt-32">
           <h2 className="text-2xl text-gray-700 mb-10">
-            Plus d&apos;article de blogs
+            Plus d&apos;articles de mon blog
           </h2>
 
           {/* Card others posts */}
