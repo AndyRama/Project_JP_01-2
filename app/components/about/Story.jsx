@@ -6,12 +6,12 @@ import Image from 'next/image'
 import img1 from '../../../public/images/story1.png'
 import img2 from '../../../public/images/story2.jpg'
 import img3 from '../../../public/images/story3.jpg'
-import img4 from '../../../public/images/story1.png'
-import img5 from '../../../public/images/story2.jpg'
-import img6 from '../../../public/images/story3.jpg'
-import img7 from '../../../public/images/story1.png'
-import img8 from '../../../public/images/story2.jpg'
-import img9 from '../../../public/images/story3.jpg'
+import img4 from '../../../public/images/story4.jpg'
+import img5 from '../../../public/images/story5.jpg'
+import img6 from '../../../public/images/story6.jpg'
+import img7 from '../../../public/images/story7.jpg'
+import img8 from '../../../public/images/story8.jpg'
+import img9 from '../../../public/images/story9.jpg'
 import img10 from '../../../public/images/story1.png'
 
 const storyContent = {
@@ -22,7 +22,7 @@ const storyContent = {
         alt: 'Team',
         width: 1188,
         height: 1413,
-        tailwindClass: 'mt-10 h-56 lg:h-96',
+        tailwindClass: 'h-56 lg:h-96',
       },
       {
         img: img2,
@@ -77,6 +77,7 @@ const storyContent = {
         alt: 'Man writting a plan',
         width: 1188,
         height: 1413,
+        tailwindClass: 'mt-20',
       },
       {
         img: img9,
