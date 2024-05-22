@@ -4,20 +4,20 @@ import Link from 'next/link'
 import React from 'react'
 import { BiBulb } from 'react-icons/bi'
 import { MdFitnessCenter, MdOutlineSportsKabaddi } from 'react-icons/md'
-import { FaRaspberryPi } from 'react-icons/fa'
+import { SiFranprix } from 'react-icons/si'
 
 const iconMapping = {
   icon1: (
-    <FaRaspberryPi className="mt-1 mr-2 border-dashed border-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10" />
+    <SiFranprix className="mt-1 mr-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10" />
   ),
   icon2: (
-    <MdFitnessCenter className="mt-1 mr-2 border-dashed border-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10" />
+    <MdFitnessCenter className="mt-1 mr-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10" />
   ),
   icon3: (
-    <BiBulb className="mt-1 mr-2 border-dashed border-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10" />
+    <BiBulb className="mt-1 mr-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10" />
   ),
   icon4: (
-    <MdOutlineSportsKabaddi className="mt-1 mr-2 border-dashed border-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10" />
+    <MdOutlineSportsKabaddi className="mt-1 mr-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10" />
   ),
 }
 const CardCategoriesContent = {
@@ -78,7 +78,7 @@ const CardCategory = ({ className }) => {
           >
             <div className="px-2 lg:px-4 mt-10 mb-10 relative flex flex-col gap-3 items-start ">
               <span className="text-2xl flex">
-                <MdFitnessCenter className="mt-2 mr-2 border-dashed border-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10" />
+                <MdFitnessCenter className="mt-2 mr-2  border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10" />
                 <h2 className="text-3xl text-white">Catégories</h2>
               </span>
               <p className="text-justiify leading-relaxed text-[15px] text-gray-500 mb-2 duration-300 transition-all ease-in-out group-hover:text-white">
