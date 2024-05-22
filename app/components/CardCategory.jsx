@@ -2,8 +2,24 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import React from 'react'
-import { BiHardHat, BiLayer, BiBulb } from 'react-icons/bi'
+import { BiBulb } from 'react-icons/bi'
+import { MdFitnessCenter, MdOutlineSportsKabaddi } from 'react-icons/md'
+import { FaRaspberryPi } from 'react-icons/fa'
 
+const iconMapping = {
+  icon1: (
+    <FaRaspberryPi className="mt-1 mr-2 border-dashed border-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10" />
+  ),
+  icon2: (
+    <MdFitnessCenter className="mt-1 mr-2 border-dashed border-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10" />
+  ),
+  icon3: (
+    <BiBulb className="mt-1 mr-2 border-dashed border-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10" />
+  ),
+  icon4: (
+    <MdOutlineSportsKabaddi className="mt-1 mr-2 border-dashed border-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10" />
+  ),
+}
 const CardCategoriesContent = {
   heading: {
     title: '',
@@ -13,31 +29,25 @@ const CardCategoriesContent = {
   step: [
     {
       title1: 'Nutrition',
-      icon1: '',
+      icon1: 'icon1',
       btn1: {
         href: '/blog/categories/nutrition',
         label: 'Alimentation',
       },
       title2: 'Fitness',
-      icon2: '',
+      icon2: 'icon2',
       btn2: {
         href: '/blog/categories/fitness',
         label: 'Fitness',
       },
       title3: 'Complément Alim.',
-      icon3: '',
+      icon3: 'icon3',
       btn3: {
         href: '/blog/categories/complement',
         label: 'Complément Alim.',
       },
-      title4: 'Workout',
-      icon4: '',
-      btn4: {
-        href: '/blog/categories/workout',
-        label: 'Compétition',
-      },
       title4: 'Entraînement',
-      icon4: '',
+      icon4: 'icon4',
       btn4: {
         href: '/blog/categories/entrainement',
         label: 'Entraînement',
@@ -68,7 +78,7 @@ const CardCategory = ({ className }) => {
           >
             <div className="px-2 lg:px-4 mt-10 mb-10 relative flex flex-col gap-3 items-start ">
               <span className="text-2xl flex">
-                {/* <BiLayer className="mt-1 mr-2 border-dashed border-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10" /> */}
+                <MdFitnessCenter className="mt-2 mr-2 border-dashed border-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10" />
                 <h2 className="text-3xl text-white">Catégories</h2>
               </span>
               <p className="text-justiify leading-relaxed text-[15px] text-gray-500 mb-2 duration-300 transition-all ease-in-out group-hover:text-white">
@@ -78,8 +88,8 @@ const CardCategory = ({ className }) => {
               {['title1', 'title2', 'title3', 'title4'].map((titleKey, idx) => (
                 <div key={idx}>
                   <Link href={step[`btn${idx + 1}`].href}>
-                    <span className="text-2xl flex">
-                      <BiLayer className="mt-1 mr-2 border-dashed border-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10" />
+                    <span className="text-2xl flex ">
+                      {iconMapping[step[`icon${idx + 1}`]]}
                       <h3
                         className="text-xl hover:text-gray-500 text-white pb-2 inline-block duration-300 transition-all bg-white-600 ease-in-out 
                         relative before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[2px]

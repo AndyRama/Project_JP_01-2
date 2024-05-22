@@ -7,8 +7,8 @@ import blog__lesProduitsMdx from './blog__Les-produits.mdx.json' assert { type: 
 import blog__test_1Mdx from './blog__Test-1.mdx.json' assert { type: 'json' }
 import blog__test_2Mdx from './blog__Test-2.mdx.json' assert { type: 'json' }
 import blog__test_3Mdx from './blog__Test-3.mdx.json' assert { type: 'json' }
-import blog__test_4Mdx from './blog__Test-4.mdx.json' assert { type: 'json' }
-import blog__test_5Mdx from './blog__Test-5.mdx.json' assert { type: 'json' }
 import blog__uneBonneAlimentationMdx from './blog__Une-bonne-alimentation.mdx.json' assert { type: 'json' }
+import blog__test_4Mdx from './blog__test-4.mdx.json' assert { type: 'json' }
+import blog__test_5Mdx from './blog__test-5.mdx.json' assert { type: 'json' }
 
-export const allPosts = [blog__cardioMdx, blog__laSalleDeSportMdx, blog__leSommeilMdx, blog__lesProduitsMdx, blog__test_1Mdx, blog__test_2Mdx, blog__test_3Mdx, blog__test_4Mdx, blog__test_5Mdx, blog__uneBonneAlimentationMdx]
+export const allPosts = [blog__cardioMdx, blog__laSalleDeSportMdx, blog__leSommeilMdx, blog__lesProduitsMdx, blog__test_1Mdx, blog__test_2Mdx, blog__test_3Mdx, blog__uneBonneAlimentationMdx, blog__test_4Mdx, blog__test_5Mdx]
