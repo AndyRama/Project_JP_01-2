@@ -7,7 +7,7 @@ import Footer from './components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Unlcoaching',
+  title: 'Unlcoaching | Jérémy Prat',
   description:
     'Allier entraînement rigoureux et nutrition équilibrée pour un mode de vie sain et durable.',
   icon: {

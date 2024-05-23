@@ -110,7 +110,7 @@ const Footer = ({ className }) => {
                   href="#"
                   className="text-[28px] text-white hover:text-orange-200 font-bold mr-10"
                 >
-                  <FaInstagramSquare />
+                  <FaInstagramSquare alt="Instagrame-icone" />
                 </Link>
               </span>
               <span>
@@ -118,7 +118,7 @@ const Footer = ({ className }) => {
                   href="#"
                   className="text-[28px] text-white  hover:text-orange-200  font-bold mr-10"
                 >
-                  <FaFacebook />
+                  <FaFacebook alt="facebook-iconne" />
                 </Link>
               </span>
               <span>
@@ -126,7 +126,7 @@ const Footer = ({ className }) => {
                   href="#"
                   className="text-[28px] text-white hover:text-orange-200 font-bold mr-10"
                 >
-                  <FaLinkedin />
+                  <FaLinkedin alt="Linkedin-iconne" />
                 </Link>
               </span>
             </div>
