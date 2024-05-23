@@ -109,24 +109,27 @@ const Footer = ({ className }) => {
                 <Link
                   href="#"
                   className="text-[28px] text-white hover:text-orange-200 font-bold mr-10"
+                  alt="Instagrame-iconne"
                 >
-                  <FaInstagramSquare alt="Instagrame-icone" />
+                  <FaInstagramSquare />
                 </Link>
               </span>
               <span>
                 <Link
                   href="#"
                   className="text-[28px] text-white  hover:text-orange-200  font-bold mr-10"
+                  alt="facebook-iconne"
                 >
-                  <FaFacebook alt="facebook-iconne" />
+                  <FaFacebook />
                 </Link>
               </span>
               <span>
                 <Link
                   href="#"
                   className="text-[28px] text-white hover:text-orange-200 font-bold mr-10"
+                  alt="Linkedin-iconne"
                 >
-                  <FaLinkedin alt="Linkedin-iconne" />
+                  <FaLinkedin />
                 </Link>
               </span>
             </div>
