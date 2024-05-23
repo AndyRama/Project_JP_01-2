@@ -43,12 +43,18 @@ const Items = ({ currentItems }) => {
                     transition-all ease-in-out group-hover:scale-[1.05] rounded-t-md"
                 />
                 <div className="p-8">
-                  <p className="text-white mb-3 uppercase text-[12px] tracking-[1px]">
-                    {format(parseISO(post.date), 'LLL d, yyyy')} • {post.author}
+                  <p className="text-white mb-3 uppercase text-[12px] tracking-[1px] font-bold">
+                    {format(parseISO(post.date), 'LLL d, yyyy')} • {post.author}{' '}
+                    <span className="text-white font-bold mb-3 uppercase text-[12px] tracking-[1px]">
+                      • Lecture <span className="text-orange-400">5 min</span>
+                    </span>
                   </p>
 
-                  <h3 className="mb-4 text-white">
-                    <Link href={post.url} className="text-lg leading-none">
+                  <h3 className="mb-4 text-orange-400">
+                    <Link
+                      href={post.url}
+                      className="text-lg font-bold leading-none"
+                    >
                       {post.title}
                     </Link>
                   </h3>
