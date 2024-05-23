@@ -1,4 +1,5 @@
 'use client'
+
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import React from 'react'
@@ -8,22 +9,40 @@ import { SiFranprix } from 'react-icons/si'
 
 const iconMapping = {
   icon1: (
-    <SiFranprix className="mt-1 mr-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10" />
+    <SiFranprix
+      data-testid="icon1"
+      className="mt-1 mr-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10"
+    />
   ),
   icon2: (
-    <MdFitnessCenter className="mt-1 mr-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10" />
+    <MdFitnessCenter
+      data-testid="icon2"
+      className="mt-1 mr-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10"
+    />
   ),
   icon3: (
-    <BiBulb className="mt-1 mr-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10" />
+    <BiBulb
+      data-testid="icon3"
+      className="mt-1 mr-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10"
+    />
   ),
   icon4: (
-    <MdOutlineSportsKabaddi className="mt-1 mr-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10" />
+    <MdOutlineSportsKabaddi
+      data-testid="icon4"
+      className="mt-1 mr-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10"
+    />
   ),
   icon5: (
-    <MdOutlineSportsKabaddi className="mt-1 mr-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10" />
+    <MdOutlineSportsKabaddi
+      data-testid="icon5"
+      className="mt-1 mr-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10"
+    />
   ),
   icon6: (
-    <MdFitnessCenter className="mt-1 mr-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10" />
+    <MdFitnessCenter
+      data-testid="icon6"
+      className="mt-1 mr-2 border-orange-500 rounded-sm text-orange-500 bg-orange-500 bg-opacity-10"
+    />
   ),
 }
 const CardCategoriesContent = {
@@ -96,7 +115,12 @@ const CardCategory = ({ className }) => {
           >
             <div className="px-2 lg:px-4 mt-3 mb-5 relative flex flex-col gap-3 items-start ">
               <span className="text-2xl flex">
-                <h2 className="text-3xl text-white">Catégories</h2>
+                <h2
+                  data-testid="categories-title"
+                  className="text-3xl text-white"
+                >
+                  Catégories
+                </h2>
               </span>
               <p className="text-justiify leading-relaxed text-[15px] text-gray-500 mb-2 duration-300 transition-all ease-in-out group-hover:text-white">
                 {step.description}
