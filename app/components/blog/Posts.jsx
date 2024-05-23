@@ -45,9 +45,7 @@ const Items = ({ currentItems }) => {
                 <div className="p-8">
                   <p className="text-white mb-3 uppercase text-[12px] tracking-[1px] font-bold">
                     {format(parseISO(post.date), 'LLL d, yyyy')} • {post.author}{' '}
-                    <span className="text-white font-bold mb-3 uppercase text-[12px] tracking-[1px]">
-                      • Lecture <span className="text-orange-400">5 min</span>
-                    </span>
+                    •<span className="text-orange-400"> Lecture 5 min</span>
                   </p>
 
                   <h3 className="mb-4 text-orange-400">
@@ -58,10 +56,14 @@ const Items = ({ currentItems }) => {
                       {post.title}
                     </Link>
                   </h3>
+
+                  <p className="text-white mb-3 text-[14px] tracking-[1px]">
+                    {post.excerpt}
+                  </p>
                   <p>
                     <Link
                       href={post.url}
-                      className={`text-gray-500 hover:text-white text-[12px] tracking-[2px] uppercase
+                      className={` text-gray-500 hover:text-white text-[12px] tracking-[2px] uppercase
                         pb-2 inline-block  duration-300 transistion-all bg-white-600
                         ease-in-out relative before:content-['']
                         before:absolute before:bottom-0 before:left-0 before:w-full
@@ -72,7 +74,7 @@ const Items = ({ currentItems }) => {
                         hover:before:scale-x-[1] hover:before:scale-y-[1]
                         hover:before:scale-z-[1]`}
                     >
-                      Read More
+                      lire l&apos;article
                     </Link>
                   </p>
                 </div>

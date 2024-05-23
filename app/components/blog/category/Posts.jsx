@@ -44,17 +44,22 @@ const Items = ({ currentItems, Post }) => {
                 />
                 <div className="p-8">
                   <p className="text-white mb-3 uppercase text-[12px] tracking-[1px]">
-                    {format(parseISO(post.date), 'LLL d, yyyy')} • {post.author}
+                    {format(parseISO(post.date), 'LLL d, yyyy')} • {post.author}{' '}
+                    •<span className="text-orange-400"> Lecture 5 min</span>
                   </p>
+                  <div className="text-white font-bold mb-3 uppercase text-[12px] tracking-[1px]"></div>
 
                   <h3 className="mb-4">
                     <Link
                       href={`/${post.url}`}
-                      className="text-white text-lg leading-none"
+                      className="text-white text-lg leading-none text-center "
                     >
                       {post.title}
                     </Link>
                   </h3>
+                  <p className="text-white mb-3 text-[14px] tracking-[1px]">
+                    {post.excerpt}
+                  </p>
                   <p>
                     <Link
                       href={`/${post.url}`}
