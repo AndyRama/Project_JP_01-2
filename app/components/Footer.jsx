@@ -109,30 +109,27 @@ const Footer = ({ className }) => {
                 <Link
                   href="#"
                   className="text-[28px] text-white hover:text-orange-200 font-bold mr-10"
-                  aria-label="LinkedIn icon"
+                  alt="Instagrame-iconne"
                 >
                   <FaInstagramSquare />
-                  <span className="sr-only">LinkedIn</span>
                 </Link>
               </span>
               <span>
                 <Link
                   href="#"
                   className="text-[28px] text-white  hover:text-orange-200  font-bold mr-10"
-                  aria-label="Facebook-icon"
+                  alt="facebook-iconne"
                 >
                   <FaFacebook />
-                  <span className="sr-only">LinkedIn</span>
                 </Link>
               </span>
               <span>
                 <Link
                   href="#"
                   className="text-[28px] text-white hover:text-orange-200 font-bold mr-10"
-                  aria-label="Linkedin-icon"
+                  alt="Linkedin-iconne"
                 >
                   <FaLinkedin />
-                  <span className="sr-only">LinkedIn</span>
                 </Link>
               </span>
             </div>

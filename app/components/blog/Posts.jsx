@@ -7,8 +7,8 @@ import { allPosts } from 'contentlayer/generated'
 import { compareDesc, format, parseISO } from 'date-fns'
 import { motion } from 'framer-motion'
 import CardCategory from '../CardCategory'
-
 // import ReactPaginate from 'react-paginate'
+
 const Items = ({ currentItems }) => {
   return (
     <>
