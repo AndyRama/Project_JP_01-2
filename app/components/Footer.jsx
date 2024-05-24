@@ -112,7 +112,7 @@ const Footer = ({ className }) => {
                   aria-label="LinkedIn icon"
                 >
                   <FaInstagramSquare />
-                  <span class="sr-only">LinkedIn</span>
+                  <span className="sr-only">LinkedIn</span>
                 </Link>
               </span>
               <span>
@@ -122,7 +122,7 @@ const Footer = ({ className }) => {
                   aria-label="Facebook-icon"
                 >
                   <FaFacebook />
-                  <span class="sr-only">LinkedIn</span>
+                  <span className="sr-only">LinkedIn</span>
                 </Link>
               </span>
               <span>
@@ -132,7 +132,7 @@ const Footer = ({ className }) => {
                   aria-label="Linkedin-icon"
                 >
                   <FaLinkedin />
-                  <span class="sr-only">LinkedIn</span>
+                  <span className="sr-only">LinkedIn</span>
                 </Link>
               </span>
             </div>
